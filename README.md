@@ -93,14 +93,16 @@ Before advanced tuning, we ran a baseline spot-check to prove our algorithm sele
 **1. Bayesian Optimization (Optuna)**
 We deployed Optuna to hunt for the perfect hyperparameters. It discovered that a low learning rate (`0.021`) combined with deep trees (`89 leaves`) and strict feature/row subsampling (`~0.79`) provided the ultimate shield against overfitting.
 
-**2. The Final Verdict**
+**2. The Final Verdict** 
 The champion LightGBM model was evaluated on the completely untouched **test set**.
 
 | Metric | Final Score |
 | :--- | :--- |
 | **Overall OOF RMSE (Training)** | 3.9028 minutes |
+| **Overall OOF R² (Training)** | 0.8272 |
 | **Unseen Test Set RMSE** | **3.9038 minutes** |
 | **Unseen Test Set R²** | **0.8267** |
+
 
 **SUCCESS!** We successfully engineered a model that explains nearly 83% of the variance in delivery times, with an error margin of less than 4 minutes, completely free of data leakage.
 
