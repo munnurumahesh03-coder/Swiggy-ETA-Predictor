@@ -106,8 +106,11 @@ The champion LightGBM model was evaluated on the completely untouched **test set
 
 **SUCCESS!** We successfully engineered a model that explains nearly 83% of the variance in delivery times, with an error margin of less than 4 minutes, completely free of data leakage.
 
-**3. The Gradio Web Dashboard**
-The final model was deployed to Hugging Face Spaces using Gradio. The UI is designed to take human-readable inputs, dynamically calculate the Trigonometry and Target Encoding in the background, and serve real-time predictions.
+**3. The Gradio Web Dashboard & UX Optimization**
+The final model was deployed to Hugging Face Spaces using Gradio. To bridge the gap between complex machine learning and user experience, the deployment was heavily optimized:
+* **Feature Pruning for UX:** Instead of overwhelming the user with dozens of input fields, we utilized LightGBM's feature importance to isolate the **Top 15 "Heavy Lifters"**. This keeps the dashboard clean, intuitive, and free of useless inputs without sacrificing predictive accuracy.
+* **Dynamic Backend Math:** The UI is designed to take simple, human-readable inputs. It dynamically calculates the complex Trigonometry (Sine/Cosine) and Target Encoding in the background, serving real-time predictions instantly.
+
 
 --- 
 ### How to Use This Repository
